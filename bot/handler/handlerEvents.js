@@ -86,11 +86,11 @@ function isBannedOrOnlyAdmin(userData, threadData, senderID, threadID, isGroup, 
 	
 		if (
 		config.maintainceMode.enable == true
-		&& !adminBot.includes(senderID)
+		&& !adminBot[0].includes(senderID)
 	) {
 		if (config.maintainceMode.sendNoti == true)
 			message.reply(getText("maintainceMode", null, null, null, lang));
-		return true;
+		return false;
 	}
 	
 	// check if only admin bot
